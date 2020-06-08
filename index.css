@@ -1,0 +1,79 @@
+.header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.logo-banner {
+    max-width: 90%;
+}
+
+.carousel {
+    margin-bottom: 32px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+}
+
+.carousel-inner .carousel-item {
+    height: 400px;
+}
+
+.project-image {
+    border-radius: 5px 5px 5px 5px;
+    width: 120px;
+    height: 120px;
+}
+
+/* Large size breakpoint */
+@media (max-width: 1199.98px) {
+    
+}
+
+/* Medium size breakpoint */
+@media (max-width: 991.98px) {
+    .logo-banner {
+        max-width: 75%;
+    }
+}
+
+/* Small size breakpoint */
+@media (max-width: 767.98px) {
+    .logo-banner {
+        max-width: 90%;
+    }
+
+    .project-image {
+        border-radius: 5px 5px 5px 5px;
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Extra small size breakpoint */
+@media (max-width: 575.98px) {
+    .nav-link {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .logo-banner {
+        max-width: 100%;
+    }
+
+    .carousel {
+        margin-bottom: 16px;
+        border-radius: 5px 5px 5px 5px;
+        overflow: hidden;
+    }
+    
+    .carousel-inner .carousel-item {
+        height: 250px;
+    }
+}
+
+/* Extra extra small size breakpoint */
+@media (max-width: 350px) {
+    .nav-link {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
