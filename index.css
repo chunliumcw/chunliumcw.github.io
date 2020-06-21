@@ -1,3 +1,5 @@
+/* HEADER -------------------------------------------------------------------*/
+
 .header {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -5,27 +7,6 @@
 
 .logo-banner {
     max-width: 90%;
-}
-
-.carousel {
-    margin-bottom: 32px;
-    border-radius: 10px 10px 10px 10px;
-    overflow: hidden;
-}
-
-.carousel-inner .carousel-item {
-    height: 400px;
-}
-
-.project-image {
-    border-radius: 5px 5px 5px 5px;
-    width: 120px;
-    height: 120px;
-}
-
-/* Large size breakpoint */
-@media (max-width: 1199.98px) {
-    
 }
 
 /* Medium size breakpoint */
@@ -40,11 +21,22 @@
     .logo-banner {
         max-width: 90%;
     }
+}
 
-    .project-image {
-        border-radius: 5px 5px 5px 5px;
-        width: 90px;
-        height: 90px;
+/* Extra small size breakpoint */
+@media (max-width: 575.98px) {
+    .logo-banner {
+        max-width: 100%;
+    }
+}
+
+/* NAV BAR ------------------------------------------------------------------*/
+
+/* Large size breakpoint */
+@media (max-width: 1199.98px) {
+    .nav-link {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 
@@ -54,11 +46,30 @@
         padding-left: 8px;
         padding-right: 8px;
     }
+}
 
-    .logo-banner {
-        max-width: 100%;
+/* Extra extra small size breakpoint */
+@media (max-width: 350px) {
+    .nav-link {
+        padding-left: 6px;
+        padding-right: 6px;
     }
+}
 
+/* FRONT PAGE CAROUSEL ------------------------------------------------------*/
+
+.carousel {
+    margin-bottom: 32px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+}
+
+.carousel-inner .carousel-item {
+    height: 400px;
+}
+
+/* Extra small size breakpoint */
+@media (max-width: 575.98px) {
     .carousel {
         margin-bottom: 16px;
         border-radius: 5px 5px 5px 5px;
@@ -70,10 +81,76 @@
     }
 }
 
-/* Extra extra small size breakpoint */
-@media (max-width: 350px) {
-    .nav-link {
-        padding-left: 6px;
-        padding-right: 6px;
+/* PEOPLE GRID --------------------------------------------------------------*/
+
+.people .card-body {
+    padding: 8px 0px 0px 0px;
+    font-size: 14px;
+}
+
+.people .card-title {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.people .card-text {
+    margin-bottom: 6px;
+}
+
+.people-small .card-body {
+    padding: 6px 0px 0px 0px;
+    font-size: 14px;
+}
+
+.people-small .card-title {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.people-small .card-text {
+    margin-bottom: 6px;
+}
+
+/* PUBLICATIONS PAGE --------------------------------------------------------*/
+
+.project-image {
+    border-radius: 5px 5px 5px 5px;
+    width: 120px;
+    height: 120px;
+}
+
+/* Small size breakpoint */
+@media (max-width: 767.98px) {
+    .project-image {
+        border-radius: 5px 5px 5px 5px;
+        width: 90px;
+        height: 90px;
     }
 }
+
+
+/* SIZE BREAKPOINTS -----------------------------------------------------------
+Large size breakpoint
+@media (max-width: 1199.98px) {
+
+}
+
+Medium size breakpoint
+@media (max-width: 991.98px) {
+
+}
+
+Small size breakpoint
+@media (max-width: 767.98px) {
+
+} 
+
+Extra small size breakpoint
+@media (max-width: 575.98px) {
+
+}
+
+Extra extra small size breakpoint
+@media (max-width: 350px) {
+
+} */
