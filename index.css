@@ -83,31 +83,31 @@
 
 /* PEOPLE GRID --------------------------------------------------------------*/
 
-.people .card-body {
+.card-custom .card-body {
     padding: 8px 0px 0px 0px;
     font-size: 14px;
 }
 
-.people .card-title {
+.card-custom .card-title {
     margin-bottom: 6px;
     font-size: 18px;
 }
 
-.people .card-text {
+.card-custom .card-text {
     margin-bottom: 6px;
 }
 
-.people-small .card-body {
+.card-custom-small .card-body {
     padding: 6px 0px 0px 0px;
     font-size: 14px;
 }
 
-.people-small .card-title {
+.card-custom-small .card-title {
     margin-bottom: 6px;
     font-size: 16px;
 }
 
-.people-small .card-text {
+.card-custom-small .card-text {
     margin-bottom: 6px;
 }
 
