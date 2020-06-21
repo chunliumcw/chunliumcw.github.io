@@ -18,6 +18,7 @@ TODO:
 - People: 
     - Square headshots from all lab members
     - Personal website links for all lab members
+    - ~~Reformat to add sections~~
     - Move 'Apply'/ Get involved to contact page
     - Get information on how to apply for different positions
 
