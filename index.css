@@ -64,9 +64,6 @@
     overflow: hidden;
 }
 
-.carousel-inner .carousel-item {
-    height: 400px;
-}
 
 /* Extra small size breakpoint */
 @media (max-width: 575.98px) {
@@ -76,9 +73,6 @@
         overflow: hidden;
     }
     
-    .carousel-inner .carousel-item {
-        height: 250px;
-    }
 }
 
 /* PEOPLE GRID --------------------------------------------------------------*/
