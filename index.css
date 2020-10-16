@@ -110,14 +110,14 @@
 .project-image {
     border-radius: 5px 5px 5px 5px;
     width: 120px;
-    height: 120px;
+    height: 90px;
 }
 
 /* Small size breakpoint */
 @media (max-width: 767.98px) {
     .project-image {
         border-radius: 5px 5px 5px 5px;
-        width: 90px;
+        width: 120px;
         height: 90px;
     }
 }
