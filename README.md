@@ -20,19 +20,19 @@ TODO:
         - We really need more lab pics 😅
     - ~~Add news section~~
     
-- Research:
+- ~~Research:~~ (Removed this page)
     - ~~Add research gallery page separate from publications page~~
-    - Populate research gallery page
+    - ~~Populate research gallery page~~
 
-- People: 
-    - Square headshots from all lab members
-    - Personal website links for all lab members
+- ~~People:~~
+    - ~~Square headshots from all lab members~~
+    - ~~Personal website links for all lab members~~
     - ~~Reformat to add sections~~
     - ~~Move 'Apply'/ Get involved to contact page~~
-    - Get information on how to apply for different positions
+    - ~~Get information on how to apply for different positions~~
 
 - List of publications/ projects:
-    - Fill from google scholar
+    - Fill from google scholar (In progress)
     - Images for each
     - Citation
     - Final PDF, link to video
