@@ -1,4 +1,7 @@
 #
+#   This .py reads citations.bib and generates html.
+#   Need to copy paste htnl into publications.html manually
+#
 import os
 
 import pprint
