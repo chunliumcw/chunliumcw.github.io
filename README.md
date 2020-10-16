@@ -1,3 +1,11 @@
+Image Guidelines:
+- 1MB file size limit
+- .jpg only
+- Ratios:
+    - Homepage: Anything rectangular will work in the carousel, it will crop as needed
+    - People: Square only
+    - Publications: 3:4 ratio only
+
 TODO:
 
 - General: 
