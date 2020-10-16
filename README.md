@@ -9,7 +9,8 @@ TODO:
 - Home:
     - Need to re-do banner logo with correct fonts/ colors
     - Add photos to caurosel from lab activities/ research
-    - Add news section
+        - We really need more lab pics 😅
+    - ~~Add news section
     
 - Research:
     - ~~Add research gallery page separate from publications page~~
