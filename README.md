@@ -2,9 +2,10 @@ Image Guidelines:
 - 1MB file size limit
 - .jpg only
 - Ratios:
-    - Homepage: Anything rectangular will work in the carousel, it will crop as needed
+    - Homepage: carousel should be about 2.25:1 ratio
     - People: Square only
-    - Publications: 3:4 ratio only
+    - Research: Square only
+    - Publications: 4:3 ratio only
 
 TODO:
 

@@ -83,7 +83,7 @@
 }
 
 .card-custom .card-title {
-    margin-bottom: 6px;
+    margin-bottom: 0px;
     font-size: 18px;
 }
 
@@ -110,7 +110,7 @@
 .project-image {
     border-radius: 5px 5px 5px 5px;
     width: 120px;
-    height: 90px;
+    height:120px;
 }
 
 /* Small size breakpoint */
