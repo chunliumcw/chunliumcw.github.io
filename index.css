@@ -58,14 +58,6 @@
 
 /* FRONT PAGE CAROUSEL ------------------------------------------------------*/
 
-body img[src$=".png"],
-body img[src$=".jpeg"],
-body img[src$=".jpg"] {
-    width: 300px;  /* Set the width */
-    height: 300px;  /* Set the height */
-    object-fit: cover;  /* Cover the entire dimension box without distorting the aspect ratio. May clip the image */
-}
-
 .carousel {
     margin-bottom: 32px;
     border-radius: 10px 10px 10px 10px;
@@ -74,7 +66,13 @@ body img[src$=".jpg"] {
 
 
 /* Extra small size breakpoint */
-@media (max-width: 575.98px) {
+@media (body img[src$=".png"],
+body img[src$=".jpeg"],
+body img[src$=".jpg"] {
+    width: 300px;  /* Or whatever width you want */
+    height: 300px;  /* Or whatever height you want */
+    object-fit: cover;  /* This will cover the 300x300 box */
+}) {
     .carousel {
         margin-bottom: 16px;
         border-radius: 5px 5px 5px 5px;
