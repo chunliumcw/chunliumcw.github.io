@@ -20,7 +20,13 @@
 </head>
 
 <body>
-
+    body img[src$=".png"],
+    body img[src$=".jpeg"],
+    body img[src$=".jpg"] {
+        width: 300px;  /* Or whatever width you want */
+        height: 300px;  /* Or whatever height you want */
+        object-fit: cover;  /* This will cover the 300x300 box */
+    }
     <div class="container">
 
         <!-- HEADER -->
