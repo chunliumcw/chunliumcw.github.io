@@ -6,7 +6,7 @@
 }
 
 .logo-banner {
-    max-width: 90%;
+    max-width: 60%;
 }
 
 /* Medium size breakpoint */
@@ -66,7 +66,7 @@
 
 
 /* Extra small size breakpoint */
-@media (max-width: 250px) {
+@media (max-width: 300px) {
     .carousel {
         margin-bottom: 16px;
         border-radius: 5px 5px 5px 5px;
