@@ -112,7 +112,7 @@
     margin-bottom: 6px;
 }
 
-  
+/* GOOGLE MAP --------------------------------------------------------*/  
 .responsive-map {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
@@ -127,6 +127,12 @@
     width: 100%;
     height: 100%;
 }
+
+/* TEXT ALIGNMENT --------------------------------------------------------*/  
+.text-justify {
+    text-align: justify;
+}
+
 
 /* PUBLICATIONS PAGE --------------------------------------------------------*/
 
