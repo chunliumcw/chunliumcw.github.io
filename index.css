@@ -43,6 +43,10 @@
 
 /* NAV BAR ------------------------------------------------------------------*/
 
+.nav-link {
+    color: black !important;
+    font-weight: bold;
+}
 /* Large size breakpoint */
 @media (max-width: 1199.98px) {
     .nav-link {
