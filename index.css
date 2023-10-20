@@ -6,9 +6,8 @@
 }
 
 .logo-banner {
-    max-width: 45%;
-    margin: 0;  /* Add this line */
-    padding: 0;  /* Add this line */
+    max-width: 60%;
+    
 }
 
 /* Medium size breakpoint */
