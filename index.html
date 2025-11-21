@@ -8,166 +8,146 @@
 
     <link rel="icon" href="favicon.png">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
-    
+
     <div class="container">
 
         <!-- HEADER -->
-        <div class="header">
-            <div class="row d-flex flex-row align-items-end">
-
-                <!-- Logo and lab name-->
-                <div class="col-lg">
-                    <img loading="lazy" src="images/logo/test-logo-banner.png" class="img-fluid logo-banner mx-auto d-block"
-                        alt="Responsive image">
-                </div>
-
-                <!-- Nav links -->
-                <div class="col-lg">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="team.html">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="research.html">Research</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="publications.html">Publications</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Get Involved</a>
-                        </li>
-                    </ul>
-                </div>
-                
+        <header class="header">
+            <div class="site-title">
+                <a href="index.html">Liu Lab @ MCW</a>
             </div>
-        </div> <!-- End Header -->
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Get Involved</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-        <!-- PAGE CONTENT -->
+        <!-- MAIN CONTENT -->
         <main role="main">
 
-            <!-- CAROUSEL -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    
-                    <div class="carousel-item active">
-                        <img loading="lazy" src="images/general/Picture1.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img loading="lazy" src="images/general/Picture2.png" class="d-block w-100" alt="...">
-                        <!-- <div class="carousel-caption d-none d-md-block">
-                          <h5>Lab Outreach</h5>
-                          <p>Photo from a lab outreach event.</p>
-                        </div> -->
-                    </div>
-                    <div class="carousel-item">
-                        <img loading="lazy" src="images/general/Picture4.png" class="d-block w-100" alt="...">
-                        <!-- <div class="carousel-caption d-none d-md-block">
-                          <h5>Lab Outreach</h5>
-                          <p>Photo from a lab outreach event.</p>
-                        </div> -->
-                    </div>
-                    <div class="carousel-item">
-                        <img loading="lazy" src="images/general/Picture7_2.png" class="d-block w-100" alt="...">
-                    </div>
-                     <!-- Forward and Backward Controls -->
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    
-            
-            </div>
-            
-             <!-- SUMMARY -->
-             <h2 class="mb-3"> Our Lab --- iPSC-Perturbation Lab </h2>
-            <p class="text-justify">We are focused on using stem cell research and high-throughput CRISPR screen to better understand the mechanisms of heart disease and develop new treatments. <a href="research.html">Click here </a>to learn more about our research team and the work we do.</p>
-                <br>
-                <br>
-            <!-- ROW OF LATEST NEWS -->
-            <div>
-
-                <h2 class="mb-3"> Recent News </h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5>Dr. Liu is AHA BCVS outstanding early career faculty finalist</h5>
-                        <p class="text-justify">Congrats for Dr. Liu got selected as the finalist, you can listen to our work:</p>
-                        <p><a class="btn btn-outline-primary" href="https://www.ahajournals.org/do/10.1161/podcast.20240715.944080" role="button">Circulation Research podcast</a></p>                   
-                    </div>
-                    <div class="col-md-4">
-                        <h5>We are recruiting!</h5>
-                        <p class="text-justify">Our lab is always interested in recruiting talented and motivated Postdoc and Ph.D. students! For more information, click on the button below. </p>
-                        <p><a class="btn btn-outline-primary" href="contact.html" role="button">Get Involved!</a></p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5>MCW Cancer Center Award</h5>
-                        <p class="text-justify">Thank you MCW Cancer Center for supporting our lab's Cardio-oncology research by one year 50K award!</p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5>AHA Award</h5>
-                        <p class="text-justify">Thanks AHA for supporting Dr. Liu's cardio-oncology CRISPR screen research (Second Century Early Faculty Independence Award 2023-2026)!</p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5>Lab open</h5>
-                        <p class="text-justify">Our lab officially open on 08/01/2023 at MCW</p>                        
-                    </div>
+            <!-- HERO SECTION -->
+            <section class="hero">
+                <div class="hero-content">
+                    <img src="images/logo/logo-black.png" alt="Liu Lab Logo" class="hero-logo">
+                    <p class="hero-subtitle">iPSC-Perturbation Lab @ Medical College of Wisconsin</p>
+                    <!-- Heading removed -->
+                    <p class="hero-description">
+                        We explore and study biological systems using stem cell research and high-throughput CRISPR
+                        screens to better understand the mechanisms of heart disease and develop new treatments for the
+                        improvement of human well-being.
+                    </p>
                 </div>
-            </div>
 
-            
+                <!-- Image Carousel -->
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="images/general/Picture1.png" alt="Slide 1">
+                        <img src="images/general/Picture2.png" alt="Slide 2">
+                        <img src="images/general/Picture4.png" alt="Slide 3">
+                        <img src="images/general/Picture7_2.png" alt="Slide 4">
+                    </div>
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+            </section>
 
-            <hr>
+            <!-- RECENT NEWS SECTION -->
+            <section class="section">
+                <h2 class="section-title">Recent Highlights</h2>
+
+                <div class="highlights-grid">
+                    <article class="highlight-card">
+                        <p class="highlight-date">Nov 2025</p>
+                        <h4>Research highlight by Wenjing and Payton</h4>
+                        <p>Check out the research highlight by Wenjing and Payton.</p>
+                        <a class="highlight-link"
+                            href="https://academic.oup.com/proteincell/advance-article/doi/10.1093/procel/pwaf081/8263980"
+                            target="_blank">Read article →</a>
+                    </article>
+
+                    <article class="highlight-card">
+                        <p class="highlight-date">Sep 2025</p>
+                        <h4>Our lab received NHLBI R01 funding support</h4>
+                        <p>We are grateful for the NHLBI R01 funding support.</p>
+                        <a class="highlight-link"
+                            href="https://reporter.nih.gov/search/QrCWqrE94U274ecdoqY_tw/project-details/11204057"
+                            target="_blank">View details →</a>
+                    </article>
+                    <article class="highlight-card">
+                        <p class="highlight-date">July 2024</p>
+                        <h4>Dr. Liu is AHA BCVS outstanding early career faculty finalist</h4>
+                        <p>Congratulations to Dr. Liu for being selected as a finalist. Listen to our work on the
+                            Circulation Research podcast.</p>
+                        <a class="highlight-link" href="https://www.ahajournals.org/do/10.1161/podcast.20240715.944080"
+                            target="_blank">Listen to podcast →</a>
+                    </article>
+
+                    <article class="highlight-card">
+                        <p class="highlight-date">Ongoing</p>
+                        <h4>We are recruiting!</h4>
+                        <p>Our lab is always interested in recruiting talented and motivated Postdoc and Ph.D. students!
+                            For more information, click on the link below.</p>
+                        <a class="highlight-link" href="contact.html">Get Involved →</a>
+                    </article>
+
+                    <article class="highlight-card">
+                        <p class="highlight-date">2024</p>
+                        <h4>MCW Cancer Center Award</h4>
+                        <p>Thank you MCW Cancer Center for supporting our lab's Cardio-oncology research with a one-year
+                            $50K award!</p>
+                    </article>
+
+                    <article class="highlight-card">
+                        <p class="highlight-date">2023-2026</p>
+                        <h4>AHA Award</h4>
+                        <p>Thanks to the American Heart Association for supporting Dr. Liu's cardio-oncology CRISPR
+                            screen research (Second Century Early Faculty Independence Award).</p>
+                    </article>
+
+                    <article class="highlight-card">
+                        <p class="highlight-date">August 1, 2023</p>
+                        <h4>Lab Opening</h4>
+                        <p>Our lab officially opened at the Medical College of Wisconsin, beginning our journey in stem
+                            cell and CRISPR research.</p>
+                    </article>
+                </div>
+            </section>
+
+            <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 64px 0;">
+
         </main>
     </div> <!-- Container -->
 
     <footer class="container">
-        <p>&copy;CHUN LIU LAB @ 2023</p>
+        <p>&copy; Liu Lab @ Medical College of Wisconsin 2023-2025</p>
     </footer>
 
-
-    <!-- Optional Bootstrap JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-
-    <!-- Custom JS -->
-    <!--script src="index.js"></script-->
-
+    <script src="carousel.js"></script>
 </body>
 
 </html>
