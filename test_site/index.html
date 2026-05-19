@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liu Lab - Stanford University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Liu Lab</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="science.html">Science</a></li>
+                <li><a href="lab.html">Lab</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div id="hero-canvas"></div>
+            <div class="hero-content">
+                <h1>Decoding the Genome for<br>New Cellular Therapies</h1>
+                <p>We combine high-throughput genomics, CRISPR screening, and synthetic biology to understand and
+                    engineer human cells.</p>
+                <a href="science.html" class="btn">Explore Our Science</a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Research Areas</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">CRISPR Screening</h3>
+                        <p>Developing scalable methods to interrogate gene function in primary human cells.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Synthetic Biology</h3>
+                        <p>Engineering novel genetic circuits to control cell behavior and therapeutic outcomes.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Cancer Immunology</h3>
+                        <p>Understanding the interaction between immune cells and tumors to improve immunotherapies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Liu Lab at Stanford University.</p>
+        <p>Department of Genetics | Stanford School of Medicine</p>
+    </footer>
+
+    <script src="three.min.js"></script>
+    <script src="hero-animation.js"></script>
+
+</body>
+
+</html>
