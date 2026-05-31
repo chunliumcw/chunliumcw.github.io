@@ -52,12 +52,12 @@ def main():
         html = (ROOT / page).read_text(encoding="utf-8")
         assert_contains(html, 'data-theme="specimen"', page)
         assert_contains(html, '<div id="root"></div>', page)
-        assert_contains(html, 'href="styles.css?v=research-final-20260531"', page)
-        assert_contains(html, 'src="data.js?v=research-final-20260531"', page)
+        assert_contains(html, 'href="styles.css?v=site-copy-20260531"', page)
+        assert_contains(html, 'src="data.js?v=site-copy-20260531"', page)
         assert_contains(html, 'src="image-slot.js"', page)
         assert_contains(html, 'src="particles.js"', page)
         assert_contains(html, 'src="components.js"', page)
-        assert_contains(html, 'src="pages.js"', page)
+        assert_contains(html, 'src="pages.js?v=site-copy-20260531"', page)
         assert "index.css" not in html, f"{page} should not load the retired stylesheet"
 
     data = (ROOT / "data.js").read_text(encoding="utf-8")
@@ -100,6 +100,23 @@ def main():
     ]:
         assert_contains(pages, expected, "pages.js")
     assert "people.slice(1)" not in pages, "pages.js should include Chun Liu with the lab members"
+    for removed in [
+        "We explore and study biological systems using stem cell research",
+        "faster than the clinic can",
+        "Seven scientists, one bench",
+        "20 papers. One question",
+        "How do we turn every gene in the genome into a possible therapy",
+        "Undergrads & rotation",
+        "Summer & semester projects",
+    ]:
+        assert removed not in pages and removed not in data, f"Removed copy should not remain: {removed}"
+    for expected in [
+        "faster than traditional approaches",
+        "Seven scientists, one lab",
+        "recreate every heart disease in a dish",
+    ]:
+        assert_contains(pages, expected, "pages.js")
+
 
     particles = (ROOT / "particles.js").read_text(encoding="utf-8")
     assert_contains(particles, "window.ParticleHeadline", "particles.js")

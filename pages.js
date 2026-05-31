@@ -112,9 +112,7 @@ function HomePage({
   }, "\xB7"), /*#__PURE__*/React.createElement("span", null, "Medical College of Wisconsin")), /*#__PURE__*/React.createElement(ParticleHeadline, {
     theme: theme,
     lines: ["Every heart", "in a dish♥"]
-  }), /*#__PURE__*/React.createElement("p", {
-    className: "hero-lede"
-  }, d.lab.mission), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "hero-cta-row"
   }, /*#__PURE__*/React.createElement("a", {
     href: "research.html",
@@ -137,9 +135,7 @@ function HomePage({
     className: "eye-sep"
   }, "\xB7"), /*#__PURE__*/React.createElement("span", null, "Medical College of Wisconsin")), /*#__PURE__*/React.createElement("h1", {
     className: "hero-headline"
-  }, "Every heart ", /*#__PURE__*/React.createElement("em", null, "in a dish."), /*#__PURE__*/React.createElement("br", null), "Every gene ", /*#__PURE__*/React.createElement("em", null, "at once.")), /*#__PURE__*/React.createElement("p", {
-    className: "hero-lede"
-  }, d.lab.mission), /*#__PURE__*/React.createElement("div", {
+  }, "Every heart ", /*#__PURE__*/React.createElement("em", null, "in a dish."), /*#__PURE__*/React.createElement("br", null), "Every gene ", /*#__PURE__*/React.createElement("em", null, "at once.")), /*#__PURE__*/React.createElement("div", {
     className: "hero-cta-row"
   }, /*#__PURE__*/React.createElement("a", {
     href: "research.html",
@@ -214,9 +210,7 @@ function HomePage({
     className: "hero-headline"
   }, "Liu Lab")), /*#__PURE__*/React.createElement("p", {
     className: "hero-sub"
-  }, "iPSC-Perturbation Lab \xB7 Medical College of Wisconsin"), /*#__PURE__*/React.createElement("p", {
-    className: "hero-lede"
-  }, d.lab.mission)), /*#__PURE__*/React.createElement("div", {
+  }, "iPSC-Perturbation Lab \xB7 Medical College of Wisconsin")), /*#__PURE__*/React.createElement("div", {
     className: "hero-stats"
   }, d.lab.pillars.map(p => /*#__PURE__*/React.createElement("div", {
     key: p.k,
@@ -335,7 +329,7 @@ function ResearchPage({
     className: "page-title"
   }, "iPSC \xD7 CRISPR ", /*#__PURE__*/React.createElement("em", null, "\u2014 at scale")), /*#__PURE__*/React.createElement("p", {
     className: "page-lede"
-  }, "We use induced pluripotent stem cells and high-throughput CRISPR screens to decode the molecular origins of cardiovascular disease \u2014 and to find drug targets faster than the clinic can.")), /*#__PURE__*/React.createElement("section", {
+  }, "We use induced pluripotent stem cells and high-throughput CRISPR screens to decode the molecular origins of cardiovascular disease \u2014 and to find drug targets faster than traditional approaches.")), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "research-list"
@@ -398,7 +392,7 @@ function TeamPage({
     className: "page-title"
   }, "The people ", /*#__PURE__*/React.createElement("em", null, "behind the science.")), /*#__PURE__*/React.createElement("p", {
     className: "page-lede"
-  }, "Seven scientists, one bench, a shared belief that stem cells and CRISPR can rewrite the playbook for heart disease.")), /*#__PURE__*/React.createElement("section", {
+  }, "Seven scientists, one lab, a shared belief that stem cells and CRISPR can recreate every heart disease in a dish.")), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "section-head"
@@ -602,9 +596,7 @@ function PublicationsPage({
     className: "page-kicker"
   }, "Publications"), /*#__PURE__*/React.createElement("h1", {
     className: "page-title"
-  }, pubs.length, " papers. ", /*#__PURE__*/React.createElement("em", null, "One question.")), /*#__PURE__*/React.createElement("p", {
-    className: "page-lede"
-  }, "How do we turn every gene in the genome into a possible therapy? Our publications trace that search \u2014 from stem-cell reprogramming (2013) to genome-scale CRISPR screens in the heart (2024)."), /*#__PURE__*/React.createElement("div", {
+  }, "Publications"), /*#__PURE__*/React.createElement("div", {
     className: "pub-controls"
   }, /*#__PURE__*/React.createElement("div", {
     className: "pub-filter-group"
@@ -669,14 +661,7 @@ function ContactPage({
   }, "Physiology PhD program"), ", and email Chun before applying to talk through fit and projects."), /*#__PURE__*/React.createElement("a", {
     href: "https://www.mcw.edu/education/graduate-school/graduate-school-programs/Biomedical-sciences-phd",
     className: "btn btn-ghost"
-  }, "Program info \u2192")), /*#__PURE__*/React.createElement("div", {
-    className: "contact-col"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "col-kicker"
-  }, "Undergrads & rotation"), /*#__PURE__*/React.createElement("h3", null, "Summer & semester projects."), /*#__PURE__*/React.createElement("p", null, "We take a small number of undergraduate researchers each year. Reach out with your class year, major, and a specific research interest."), /*#__PURE__*/React.createElement("a", {
-    href: "mailto:chunliu@mcw.edu",
-    className: "btn btn-ghost"
-  }, "Inquire \u2192")))), /*#__PURE__*/React.createElement("section", {
+  }, "Program info \u2192")))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "contact-info"
