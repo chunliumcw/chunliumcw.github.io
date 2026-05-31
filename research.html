@@ -1,113 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="specimen">
 <head>
-    <title>Research - iPSC-Perturbation lab @ Medical College of Wisconsin</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" href="favicon.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research — Liu Lab @ MCW</title>
+  <meta name="description" content="iPSC-Perturbation Lab at the Medical College of Wisconsin. We use induced pluripotent stem cells and CRISPR screens to decode cardiovascular disease." />
+  <link rel="icon" href="favicon.png" />
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<body data-theme="specimen">
+  <script>
+    (function () {
+      try {
+        document.body.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <div id="root"></div>
 
-<body>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
-    <div class="container">
+  <script src="data.js"></script>
+  <script src="image-slot.js"></script>
+  <script src="particles.js"></script>
+  <script src="components.js"></script>
+  <script src="pages.js"></script>
 
-        <!-- HEADER -->
-        <header class="header">
-            <div class="site-title">
-                <a href="index.html">Liu Lab @ MCW</a>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="research.html">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Get Involved</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+  <script>
+    const e = React.createElement;
 
-        <!-- MAIN CONTENT -->
-        <main role="main">
-            <h1>Our Research</h1>
-            <p class="text-justify">At the core of our lab's work are Induced Pluripotent Stem Cells (iPSCs) and CRISPR
-                screening technology. Reprogram cells to repair damaged heart tissue or even prevent cardiovascular
-                diseases before they strike —it's what we're working on right now! Using iPSCs, we're creating
-                patient-specific models to delve deep into the mysteries of the heart. And with the high-throughput of
-                CRISPR screening, we're identifying novel drug targets faster than ever before. Our lab is working on
-                the following areas:</p>
+    function Site() {
+      const [page, setPage] = React.useState('research');
 
-            <div class="highlights-grid">
-                <article class="highlight-card">
-                    <a href="projects/template-project/template-project1.html">
-                        <img src="images/research/reprogramming_differentiation.png"
-                            alt="Reprogramming and Differentiation"
-                            style="width: 100%; border-radius: 4px; margin-bottom: 16px;">
-                        <h4>Reprogramming and Differentiation</h4>
-                    </a>
-                </article>
+      // Navigate to a different page = full page load (each page is a real .html file)
+      const navigate = (target) => {
+        const map = {
+          home: 'index.html',
+          research: 'research.html',
+          team: 'team.html',
+          publications: 'publications.html',
+          contact: 'contact.html'
+        };
+        if (target !== 'research') window.location.href = map[target];
+      };
 
-                <article class="highlight-card">
-                    <a href="projects/template-project/template-project2.html">
-                        <img src="images/research/disease_modeling.png" alt="Disease Modeling"
-                            style="width: 100%; border-radius: 4px; margin-bottom: 16px;">
-                        <h4>Disease Modeling</h4>
-                    </a>
-                </article>
+      const goResearch = (projectId) => {
+        sessionStorage.setItem('liu.targetProject', projectId);
+        window.location.href = 'research.html';
+      };
 
-                <article class="highlight-card">
-                    <a href="projects/template-project/template-project3.html">
-                        <img src="images/research/crispr_screening.png" alt="CRISPRi/a Screening"
-                            style="width: 100%; border-radius: 4px; margin-bottom: 16px;">
-                        <h4>CRISPRi/a Screening</h4>
-                    </a>
-                </article>
+      // Pick up cross-page research target on load
+      const [targetProject, setTargetProject] = React.useState(() => {
+        if (true) {
+          const t = sessionStorage.getItem('liu.targetProject');
+          if (t) sessionStorage.removeItem('liu.targetProject');
+          return t || null;
+        }
+        return null;
+      });
 
-                <article class="highlight-card">
-                    <a href="projects/template-project/template-project4.html">
-                        <img src="images/research/perturbseq_organoid.png" alt="Perturb-seq in Organoid"
-                            style="width: 100%; border-radius: 4px; margin-bottom: 16px;">
-                        <h4>Perturb-seq in Organoid</h4>
-                    </a>
-                </article>
+      return e(React.Fragment, null,
+        e(Nav, { page: 'research', setPage: navigate, theme: 'specimen', setTheme: () => {} }),
+        e('main', null,
+          e(ResearchPage, { theme: 'specimen', initialProject: targetProject })
+        ),
+        e(Footer, null)
+      );
+    }
 
-                <article class="highlight-card">
-                    <a href="projects/template-project/template-project5.html">
-                        <img src="images/research/population_in_a_dish.png" alt="Population-in-a-dish"
-                            style="width: 100%; border-radius: 4px; margin-bottom: 16px;">
-                        <h4>Population-in-a-dish</h4>
-                    </a>
-                </article>
-            </div>
-
-            <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 64px 0;">
-        </main>
-    </div> <!-- Container -->
-
-    <footer class="container">
-        <p>&copy; Liu Lab @ Medical College of Wisconsin 2023-2025</p>
-    </footer>
-
+    ReactDOM.createRoot(document.getElementById('root')).render(e(Site));
+  </script>
 </body>
-
 </html>

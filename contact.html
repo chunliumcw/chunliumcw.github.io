@@ -1,126 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="specimen">
 <head>
-    <title>Get Involved - iPSC-Perturbation lab @ Medical College of Wisconsin</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" href="favicon.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get involved — Liu Lab @ MCW</title>
+  <meta name="description" content="iPSC-Perturbation Lab at the Medical College of Wisconsin. We use induced pluripotent stem cells and CRISPR screens to decode cardiovascular disease." />
+  <link rel="icon" href="favicon.png" />
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<body data-theme="specimen">
+  <script>
+    (function () {
+      try {
+        document.body.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <div id="root"></div>
 
-<body>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
-    <div class="container">
+  <script src="data.js"></script>
+  <script src="image-slot.js"></script>
+  <script src="particles.js"></script>
+  <script src="components.js"></script>
+  <script src="pages.js"></script>
 
-        <!-- HEADER -->
-        <header class="header">
-            <div class="site-title">
-                <a href="index.html">Liu Lab @ MCW</a>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Get Involved</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+  <script>
+    const e = React.createElement;
 
-        <!-- MAIN CONTENT -->
-        <main role="main">
-            <h1>Contact Us</h1>
+    function Site() {
+      const [page, setPage] = React.useState('contact');
 
-            <section class="section">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 64px;">
-                    <div>
-                        <p class="text-justify">The iPSC-Perturbation Lab is part of the Department of Physiology and
-                            Medicine, Cardiovascular Center and Cancer Center at the Medical College of Wisconsin. To
-                            contact the lab, please email Chun Liu directly.</p>
-                        <h3>Lab Space:</h3>
-                        <p>MEB 4720</p>
-                        <h3>Contact Email:</h3>
-                        <p>Chun Liu: chunliu[at]mcw.edu</p>
-                    </div>
-                    <div>
-                        <div class="responsive-map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6182.015979954695!2d-88.0251715666811!3d43.044174975580454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880504e0534cddc7%3A0xfc67e65f0bd4ae55!2sMedical%20College%20of%20Wisconsin!5e0!3m2!1sen!2sus!4v1697753890219!5m2!1sen!2sus"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      // Navigate to a different page = full page load (each page is a real .html file)
+      const navigate = (target) => {
+        const map = {
+          home: 'index.html',
+          research: 'research.html',
+          team: 'team.html',
+          publications: 'publications.html',
+          contact: 'contact.html'
+        };
+        if (target !== 'contact') window.location.href = map[target];
+      };
 
-            <section class="section">
-                <h2>Getting Involved</h2>
+      const goResearch = (projectId) => {
+        sessionStorage.setItem('liu.targetProject', projectId);
+        window.location.href = 'research.html';
+      };
 
-                <h3>Postdocs and visiting scholars</h3>
-                <p class="text-justify">We are always looking for talented postdocs and scholars to join our innovative
-                    projects. If you're interested in iPSC, CRISPR screening, and cardiovascular diseases, contact Dr.
-                    Liu directly for details.</p>
+      // Pick up cross-page research target on load
+      const [targetProject, setTargetProject] = React.useState(() => {
+        if (false) {
+          const t = sessionStorage.getItem('liu.targetProject');
+          if (t) sessionStorage.removeItem('liu.targetProject');
+          return t || null;
+        }
+        return null;
+      });
 
-                <h3>Ph.D. Students</h3>
-                <p class="text-justify">Prospective Ph.D. students interested in joining my research group should apply
-                    directly to the <a
-                        href="https://www.mcw.edu/education/graduate-school/graduate-school-programs/Biomedical-sciences-phd">Physiology
-                        PhD program</a> or contact me before your application. The Department at MCW is committed to
-                    supporting all new Ph.D. students with five years of funding through combinations of grants,
-                    university fellowships, and teaching assistantships.</p>
-            </section>
+      return e(React.Fragment, null,
+        e(Nav, { page: 'contact', setPage: navigate, theme: 'specimen', setTheme: () => {} }),
+        e('main', null,
+          e(ContactPage, { theme: 'specimen' })
+        ),
+        e(Footer, null)
+      );
+    }
 
-            <section class="section">
-                <h2>Why join our iPSC-Perturbation lab?</h2>
-                <p class="text-justify">The rapid advancements in iPSC stem cell technology and CRISPR technology have
-                    thrust us into an era where science fiction becomes reality, offering tantalizing possibilities like
-                    eradicating genetic diseases, enhancing human capabilities, and potentially extending lifespan.
-                    "Designing babies" using pluripotent stem cells and CRISPR? The concept of "modified human" could
-                    easily slide from medically justifiable edits to "designer baby", it is "feasible" today and becomes
-                    a rising question that needs regulation and oversight. But in our lab, we are using iPSC and CRISPR
-                    tools to revolutionize medicine by curing intractable diseases and possibly even addressing the
-                    age-old problem in heart attack.</p>
-
-                <div style="max-width: 800px; margin: 32px auto;">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/jAhjPd4uNFY?si=x2-0vz_TO2-sYo5f"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-                    </div>
-                </div>
-            </section>
-
-            <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 64px 0;">
-        </main>
-    </div> <!-- Container -->
-
-    <footer class="container">
-        <p>&copy; Liu Lab @ Medical College of Wisconsin 2023-2025</p>
-    </footer>
-
+    ReactDOM.createRoot(document.getElementById('root')).render(e(Site));
+  </script>
 </body>
-
 </html>

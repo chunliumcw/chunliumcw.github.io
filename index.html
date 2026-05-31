@@ -1,159 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="specimen">
 <head>
-    <title>iPSC-Perturbation lab @ Medical College of Wisconsin</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" href="favicon.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liu Lab @ MCW — iPSC-Perturbation Lab</title>
+  <meta name="description" content="iPSC-Perturbation Lab at the Medical College of Wisconsin. We use induced pluripotent stem cells and CRISPR screens to decode cardiovascular disease." />
+  <link rel="icon" href="favicon.png" />
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<body data-theme="specimen">
+  <script>
+    (function () {
+      try {
+        document.body.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <div id="root"></div>
 
-<body>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
-    <div class="container">
+  <script src="data.js"></script>
+  <script src="image-slot.js"></script>
+  <script src="particles.js"></script>
+  <script src="components.js"></script>
+  <script src="pages.js"></script>
 
-        <!-- HEADER -->
-        <header class="header">
-            <div class="site-title">
-                <a href="index.html">Liu Lab @ MCW</a>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Get Involved</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+  <script>
+    const e = React.createElement;
 
-        <!-- MAIN CONTENT -->
-        <main role="main">
+    function Site() {
+      const [page, setPage] = React.useState('home');
 
-            <!-- HERO SECTION -->
-            <section class="hero">
-                <div class="hero-content">
-                    <img src="images/logo/logo-black.png" alt="Liu Lab Logo" class="hero-logo">
-                    <p class="hero-subtitle">iPSC-Perturbation Lab @ Medical College of Wisconsin</p>
-                    <!-- Heading removed -->
-                    <p class="hero-description">
-                        We explore and study biological systems using stem cell research and high-throughput CRISPR
-                        screens to better understand the mechanisms of heart disease and develop new treatments for the
-                        improvement of human well-being.
-                    </p>
-                </div>
+      // Navigate to a different page = full page load (each page is a real .html file)
+      const navigate = (target) => {
+        const map = {
+          home: 'index.html',
+          research: 'research.html',
+          team: 'team.html',
+          publications: 'publications.html',
+          contact: 'contact.html'
+        };
+        if (target !== 'home') window.location.href = map[target];
+      };
 
-                <!-- Image Carousel -->
-                <div class="carousel-container">
-                    <div class="carousel-slide">
-                        <img src="images/general/Picture1.png" alt="Slide 1">
-                        <img src="images/general/Picture2.png" alt="Slide 2">
-                        <img src="images/general/Picture4.png" alt="Slide 3">
-                        <img src="images/general/Picture7_2.png" alt="Slide 4">
-                    </div>
-                    <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-                </div>
-            </section>
+      const goResearch = (projectId) => {
+        sessionStorage.setItem('liu.targetProject', projectId);
+        window.location.href = 'research.html';
+      };
 
-            <!-- RECENT NEWS SECTION -->
-            <section class="section">
-                <h2 class="section-title">Recent Highlights</h2>
+      // Pick up cross-page research target on load
+      const [targetProject, setTargetProject] = React.useState(() => {
+        if (false) {
+          const t = sessionStorage.getItem('liu.targetProject');
+          if (t) sessionStorage.removeItem('liu.targetProject');
+          return t || null;
+        }
+        return null;
+      });
 
-                <div class="highlights-grid">
-                    <article class="highlight-card">
-                        <p class="highlight-date">Current</p>
-                        <h4>Fellowship Congratulations</h4>
-                        <p>Congrats to Payton on receiving MCW Physiology T32 fellowship. Congrats to Wenjing and Coneria on receiving MCW Cancer Center Post-/pre-doctoral fellowship.</p>
-                    </article>
+      return e(React.Fragment, null,
+        e(Nav, { page: 'home', setPage: navigate, theme: 'specimen', setTheme: () => {} }),
+        e('main', null,
+          e(HomePage, { theme: 'specimen', heroVariant: 'particle', goResearch })
+        ),
+        e(Footer, null)
+      );
+    }
 
-                    <article class="highlight-card">
-                        <p class="highlight-date">Nov 2025</p>
-                        <h4>Research highlight by Wenjing and Payton</h4>
-                        <p>Check out the research highlight by Wenjing and Payton.</p>
-                        <a class="highlight-link"
-                            href="https://academic.oup.com/proteincell/advance-article/doi/10.1093/procel/pwaf081/8263980"
-                            target="_blank">Read article →</a>
-                    </article>
-
-                    <article class="highlight-card">
-                        <p class="highlight-date">Sep 2025</p>
-                        <h4>Our lab received NHLBI R01 funding support</h4>
-                        <p>We are grateful for the NHLBI R01 funding support.</p>
-                        <a class="highlight-link"
-                            href="https://reporter.nih.gov/search/QrCWqrE94U274ecdoqY_tw/project-details/11204057"
-                            target="_blank">View details →</a>
-                    </article>
-                    <article class="highlight-card">
-                        <p class="highlight-date">July 2024</p>
-                        <h4>Dr. Liu is AHA BCVS outstanding early career faculty finalist</h4>
-                        <p>Congratulations to Dr. Liu for being selected as a finalist. Listen to our work on the
-                            Circulation Research podcast.</p>
-                        <a class="highlight-link" href="https://www.ahajournals.org/do/10.1161/podcast.20240715.944080"
-                            target="_blank">Listen to podcast →</a>
-                    </article>
-
-                    <article class="highlight-card">
-                        <p class="highlight-date">Ongoing</p>
-                        <h4>We are recruiting!</h4>
-                        <p>Our lab is always interested in recruiting talented and motivated Postdoc and Ph.D. students!
-                            For more information, click on the link below.</p>
-                        <a class="highlight-link" href="contact.html">Get Involved →</a>
-                    </article>
-
-                    <article class="highlight-card">
-                        <p class="highlight-date">2024</p>
-                        <h4>MCW Cancer Center Award</h4>
-                        <p>Thank you MCW Cancer Center for supporting our lab's Cardio-oncology research with a one-year
-                            $50K award!</p>
-                    </article>
-
-                    <article class="highlight-card">
-                        <p class="highlight-date">2023-2026</p>
-                        <h4>AHA Award</h4>
-                        <p>Thanks to the American Heart Association for supporting Dr. Liu's cardio-oncology CRISPR
-                            screen research (Second Century Early Faculty Independence Award).</p>
-                    </article>
-
-                    <article class="highlight-card">
-                        <p class="highlight-date">August 1, 2023</p>
-                        <h4>Lab Opening</h4>
-                        <p>Our lab officially opened at the Medical College of Wisconsin, beginning our journey in stem
-                            cell and CRISPR research.</p>
-                    </article>
-                </div>
-            </section>
-
-            <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 64px 0;">
-
-        </main>
-    </div> <!-- Container -->
-
-    <footer class="container">
-        <p>&copy; Liu Lab @ Medical College of Wisconsin 2023-2025</p>
-    </footer>
-
-    <script src="carousel.js"></script>
+    ReactDOM.createRoot(document.getElementById('root')).render(e(Site));
+  </script>
 </body>
-
 </html>

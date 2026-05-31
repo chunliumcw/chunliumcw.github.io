@@ -1,258 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="specimen">
 <head>
-    <title>Publications - iPSC-Perturbation lab @ Medical College of Wisconsin</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" href="favicon.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications — Liu Lab @ MCW</title>
+  <meta name="description" content="iPSC-Perturbation Lab at the Medical College of Wisconsin. We use induced pluripotent stem cells and CRISPR screens to decode cardiovascular disease." />
+  <link rel="icon" href="favicon.png" />
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<body data-theme="specimen">
+  <script>
+    (function () {
+      try {
+        document.body.setAttribute('data-theme', localStorage.getItem('liu.theme') || 'specimen');
+      } catch (e) {}
+    })();
+  </script>
+  <div id="root"></div>
 
-<body>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
-    <div class="container">
+  <script src="data.js"></script>
+  <script src="image-slot.js"></script>
+  <script src="particles.js"></script>
+  <script src="components.js"></script>
+  <script src="pages.js"></script>
 
-        <!-- HEADER -->
-        <header class="header">
-            <div class="site-title">
-                <a href="index.html">Liu Lab @ MCW</a>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="publications.html">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Get Involved</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+  <script>
+    const e = React.createElement;
 
-        <!-- MAIN CONTENT -->
-        <main role="main">
+    function Site() {
+      const [page, setPage] = React.useState('publications');
 
-            <h1>Publications</h1>
+      // Navigate to a different page = full page load (each page is a real .html file)
+      const navigate = (target) => {
+        const map = {
+          home: 'index.html',
+          research: 'research.html',
+          team: 'team.html',
+          publications: 'publications.html',
+          contact: 'contact.html'
+        };
+        if (target !== 'publications') window.location.href = map[target];
+      };
 
-            <div class="scholar-link-container" style="text-align: center; margin-bottom: 2rem;">
-                <a href="https://scholar.google.com/citations?hl=en&user=9uDSsx8AAAAJ&view_op=list_works&sortby=pubdate"
-                    target="_blank" class="button-primary"
-                    style="display: inline-block; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">
-                    View Full List on Google Scholar &rarr;
-                </a>
-                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">For the most up-to-date list of
-                    publications, please visit our Google Scholar profile.</p>
-            </div>
+      const goResearch = (projectId) => {
+        sessionStorage.setItem('liu.targetProject', projectId);
+        window.location.href = 'research.html';
+      };
 
-            <section class="section">
-                <h2>2026</h2>
-                <div class="publication-item">
-                    <p class="pub_title">Nuclear Lamins in Cardiac Development and Disease</p>
-                    <p class="pub_author">S Li, R Li, <b>C Liu</b>, D Xu, L Han</p>
-                    <p class="pub_venue">Cells 15 (9), 844</p>
-                </div>
-            </section>
+      // Pick up cross-page research target on load
+      const [targetProject, setTargetProject] = React.useState(() => {
+        if (false) {
+          const t = sessionStorage.getItem('liu.targetProject');
+          if (t) sessionStorage.removeItem('liu.targetProject');
+          return t || null;
+        }
+        return null;
+      });
 
-            <section class="section">
-                <h2>2025</h2>
-                <div class="publication-item">
-                    <p class="pub_title">A comprehensive multi-organ proteomic atlas of human aging across 50 years</p>
-                    <p class="pub_author">W Dong, P Klosa, A Beyer, X Lin, <b>C Liu</b></p>
-                    <p class="pub_venue">Protein & Cell, pwaf081</p>
-                </div>
+      return e(React.Fragment, null,
+        e(Nav, { page: 'publications', setPage: navigate, theme: 'specimen', setTheme: () => {} }),
+        e('main', null,
+          e(PublicationsPage, { theme: 'specimen' })
+        ),
+        e(Footer, null)
+      );
+    }
 
-                <div class="publication-item">
-                    <p class="pub_title">ARID5A orchestrates cardiac aging and inflammation through MAVS mRNA stabilization</p>
-                    <p class="pub_author">Y Fan, Y Zheng, Y Zhang, G Xu, <b>C Liu</b>, J Hu, Q Ji, S Zhang, S Fang, J Lei, ...</p>
-                    <p class="pub_venue">Nature Cardiovascular Research, 1-22</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>2024</h2>
-                <div class="publication-item">
-                    <p class="pub_title">CRISPRi/a screens in human iPSC-cardiomyocytes identify glycolytic activation
-                        as a druggable target for doxorubicin-induced cardiotoxicity</p>
-                    <p class="pub_author"><b>Liu C# *</b>, Shen, M.#, Liu, Y.X., Nishiga, M., Thomas, D., Rhee, J.,
-                        Sayed, N., Qi, S., and Wu, J.C.</p>
-                    <p class="pub_venue">Cell Stem Cell, Volume 31, Issue 12, 1760 - 1776.e9 (# first-author, *
-                        corresponding-author)</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>2023</h2>
-                <div class="publication-item">
-                    <p class="pub_title">Death-seq identifies regulators of cell death and senolytic therapies</p>
-                    <p class="pub_author">Colville A, Liu JY, Rodriguez-Mateo C, Thomas S, Ishak HD, Zhou R, Klein JDD,
-                        Morgens DW, Goshayeshi A, Salvi JS, Yao D, Spees K, Dixon SJ, <b>Liu C</b>, Rhee JW, Lai C, Wu
-                        JC, Bassik MC, Rando TA</p>
-                    <p class="pub_venue">Cell Metabolism, 2023 Sep 5:S1550-4131(23)00303-0. doi:
-                        10.1016/j.cmet.2023.08.008.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Statins improve endothelial function via suppression of epigenetic-driven EndMT
-                    </p>
-                    <p class="pub_author"><b>Liu C# *</b>, Shen M#, Tan WLW#, Chen IY, Liu Y, Yu X, Yang H, Zhang A, Liu
-                        Y, Zhao MT, Ameen M, Zhang M, Gross ER, Qi LS, Sayed N*, Wu JC*</p>
-                    <p class="pub_venue">Nature Cardiovascular Research, 2023 May;2(5):467-485. doi:
-                        10.1038/s44161-023-00267-1. (# first-author, * corresponding-author)</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Stepwise Generation of Human Induced Pluripotent Stem Cell-Derived Cardiac
-                        Pericytes to Model Coronary Microvascular Dysfunction</p>
-                    <p class="pub_author">Shen M#, <b>Liu C#</b>, Zhao SR, Manhas A, Sundaram L, Ameen M, Wu JC*</p>
-                    <p class="pub_venue">Circulation, 2023 Feb 7;147(6):515-518. doi: 10.1161/CIRCULATIONAHA.122.061770.
-                        (# first-author, * corresponding-author)</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>2022</h2>
-                <div class="publication-item">
-                    <p class="pub_title">Cardiotoxicity drug screening based on whole-panel intracellular recording</p>
-                    <p class="pub_author">Yang Y, Liu A, Tsai CT, <b>Liu C</b>, Wu JC, Cui B</p>
-                    <p class="pub_venue">Biosensors and Bioelectronics, 2022 Nov 15;216:114617. doi:
-                        10.1016/j.bios.2022.114617.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Acoustic Fabrication of Living Cardiomyocyte-based Hybrid Biorobots</p>
-                    <p class="pub_author">Wang J, Soto F, Ma P, Ahmed R, Yang H, Chen S, Wang J, <b>Liu C</b>, Akin D,
-                        Fu K, Cao X, Chen P, Hsu EC, Soh HT, Stoyanova T, Wu JC, Demirci U</p>
-                    <p class="pub_venue">ACS Nano, 2022 Jul 26;16(7):10219-10230.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Cannabinoid receptor 1 antagonist genistein attenuates marijuana-induced
-                        vascular inflammation</p>
-                    <p class="pub_author">Wei TT, Chandy M, Nishiga M, Zhang A, Kumar KK, Thomas D, Manhas A, Rhee S,
-                        Justesen JM, Chen IY, Wo HT, Khanamiri S, Yang JY, Seidl FJ, Burns NZ, <b>Liu C</b>, Sayed N,
-                        Shie JJ, Yeh CF, Yang KC, Lau E, Lynch KL, Rivas M, Kobilka BK, Wu JC</p>
-                    <p class="pub_venue">Cell, 2022 May 12;185(10):1676-1693.e23. doi: 10.1016/j.cell.2022.04.005.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">The use of new CRISPR tools in cardiovascular research and medicine</p>
-                    <p class="pub_author">Nishiga M, <b>Liu C</b>, Qi L.S, Wu JC</p>
-                    <p class="pub_venue">Nature Review Cardiology, 2022 Feb 10. 505_521.</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>2021</h2>
-                <div class="publication-item">
-                    <p class="pub_title">Editorial: Cardiomyocyte Maturation: Novel Insights for Regenerative Medicine
-                    </p>
-                    <p class="pub_author">Zhang M, Qian L, <b>Liu C</b>, Huang GN, Tao G</p>
-                    <p class="pub_venue">Frontiers in Cell and Developmental Biology, 2021 Aug 2;9:730622. doi:
-                        10.3389/fcell.2021.730622.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Generation of Human iPSCs by Protein Reprogramming and Stimulation of TLR3
-                        Signaling</p>
-                    <p class="pub_author"><b>Liu C#</b>, Ameen M, Himmati S, Thomas D, Sayed N*</p>
-                    <p class="pub_venue">Methods in Molecular Biology, 2021;2239:153-162. doi:
-                        10.1007/978-1-0716-1084-8_10. (# first-author, * corresponding-author)</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Single-Cell RNA Sequencing Unveils Unique Transcriptomic Signatures of
-                        Organ-Specific Endothelial Cells</p>
-                    <p class="pub_author">Paik DT, Tian L, Williams IM, Rhee S, Zhang H, <b>Liu C</b>, Mishra R, Wu SM,
-                        Red-Horse K, Wu JC</p>
-                    <p class="pub_venue">Circulation, 2020 Nov 10;142(19):1848-1862.</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>2020</h2>
-                <div class="publication-item">
-                    <p class="pub_title">Clinical trial in a dish using iPSCs shows lovastatin improves endothelial
-                        dysfunction and cellular cross-talk in LMNA cardiomyopathy</p>
-                    <p class="pub_author">Sayed N#, <b>Liu C#</b>, Ameen M, Himmati F, Zhang JZ, Khanamiri S, Moonen JR,
-                        Wnorowski A, Cheng L, Rhee JW, Gaddam S, Wang KC, Sallam K, Boyd JH, Woo YJ, Rabinovitch M, Wu
-                        JC*</p>
-                    <p class="pub_venue">Science Translational Medicine, 2020 Jul 29;12(554):eaax9276. doi:
-                        10.1126/scitranslmed.aax9276. (# first-author, * corresponding-author)</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">HIF1α Regulates Early Metabolic Changes due to Activation of Innate Immunity in
-                        Nuclear Reprogramming</p>
-                    <p class="pub_author"><b>Liu C#</b>, Ruan H#, Himmati F, Zhao MT, Chen CC, Makar M, Chen IY, Sallam
-                        K, Mocarski ES, Sayed D, Sayed N*</p>
-                    <p class="pub_venue">Stem Cell Reports, 2020 Feb 11;14(2):192-200. doi:
-                        10.1016/j.stemcr.2020.01.006. (# first-author, * corresponding-author)</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Before 2020</h2>
-                <div class="publication-item">
-                    <p class="pub_title">A Human iPSC Double-Reporter System Enables Purification of Cardiac Lineage
-                        Subpopulations with Distinct Function and Drug Response Profiles</p>
-                    <p class="pub_author">Zhang JZ, Termglinchan V, Shao NY, Itzhaki I, <b>Liu C</b>, Ma N, Tian L, Wang
-                        VY, Chang ACY, Guo H, Kitani T, Wu H, Lam CK, Kodo K, Sayed N, Blau HM, Wu JC</p>
-                    <p class="pub_venue">Cell Stem Cell, 2019 May 2;24(5):802-811.e5. doi: 10.1016/j.stem.2019.02.015.
-                    </p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Modeling human diseases with induced pluripotent stem cells: from 2D to 3D and
-                        beyond</p>
-                    <p class="pub_author"><b>Liu C#</b>, Oikonomopoulos A, Sayed N, Wu JC*</p>
-                    <p class="pub_venue">Development, 2018 Mar 8;145(5):dev156166. doi: 10.1242/dev.156166. (#
-                        first-author, * corresponding-author)</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Translation of Human-Induced Pluripotent Stem Cells: From Clinical Trial in a
-                        Dish to Precision Medicine</p>
-                    <p class="pub_author">Sayed N, <b>Liu C</b>, Wu JC</p>
-                    <p class="pub_venue">J Am Coll Cardiol, 2016 May 10;67(18):2161-2176. doi:
-                        10.1016/j.jacc.2016.01.083.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p class="pub_title">Pluripotent stem cells induced from mouse somatic cells by small-molecule
-                        compounds</p>
-                    <p class="pub_author">Hou P#, Li Y#, Zhang X#, <b>Liu C#</b>, Guan J#, Li H#, Zhao T, Ye J, Yang W,
-                        Liu K, Ge J, Xu J, Zhang Q, Zhao Y, Deng H*</p>
-                    <p class="pub_venue">Science, 2013 Aug 9;341(6146):651-4. doi: 10.1126/science.1239278. (#
-                        first-author, * corresponding-author)</p>
-                </div>
-            </section>
-
-            <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 64px 0;">
-        </main>
-    </div> <!-- Container -->
-
-    <footer class="container">
-        <p>&copy; Liu Lab @ Medical College of Wisconsin 2023-2025</p>
-    </footer>
-
+    ReactDOM.createRoot(document.getElementById('root')).render(e(Site));
+  </script>
 </body>
-
 </html>
