@@ -35,7 +35,7 @@ window.LAB_DATA = {
       id: "reprogramming",
       num: "01",
       title: "Reprogramming and Differentiation",
-      img: "assets/research-reprogramming.png",
+      img: "assets/research-reprogramming.png?v=research-20260531",
       blurb: "We reprogram patient somatic cells into induced pluripotent stem cells, then differentiate them into cardiac and vascular cell types to study cardiovascular biology in a dish.",
       stat: { k: "Cell types", v: "—" }
     },
@@ -43,7 +43,7 @@ window.LAB_DATA = {
       id: "disease",
       num: "02",
       title: "Disease Modeling",
-      img: "assets/research-disease.png",
+      img: "assets/research-disease.png?v=research-20260531",
       blurb: "Reprogram cells to repair damaged heart tissue or even prevent cardiovascular diseases before they strike. Using iPSCs, we create patient-specific models to delve deep into the mysteries of the heart.",
       stat: { k: "Disease contexts", v: "—" }
     },
@@ -51,7 +51,7 @@ window.LAB_DATA = {
       id: "crispr",
       num: "03",
       title: "CRISPRi/a Screening",
-      img: "assets/research-crispr.png",
+      img: "assets/research-crispr.png?v=research-20260531",
       blurb: "With the high-throughput of CRISPR interference and activation screening, we identify novel drug targets faster than ever before.",
       stat: { k: "sgRNA library", v: "—" }
     },
@@ -59,7 +59,7 @@ window.LAB_DATA = {
       id: "perturbseq",
       num: "04",
       title: "Perturb-seq in Organoid",
-      img: "assets/research-perturbseq.png",
+      img: "assets/research-perturbseq.png?v=research-20260531",
       blurb: "Combining pooled perturbation with single-cell RNA-seq inside 3D cardiac organoids to read out the consequences of gene perturbations at scale.",
       stat: { k: "Single-cell", v: "—" }
     },
@@ -67,7 +67,7 @@ window.LAB_DATA = {
       id: "population",
       num: "05",
       title: "Population-in-a-Dish",
-      img: "assets/research-population.png",
+      img: "assets/research-population.png?v=research-20260531",
       blurb: "Studying drug response and disease across genetically diverse iPSC lines on a single platform to understand how genetics shapes outcomes.",
       stat: { k: "iPSC lines", v: "—" }
     }
